@@ -1,6 +1,6 @@
 class BankAccount:
 
-	def _init_(self, balance = 0, interest_rate = 0.02):
+	def __init__(self, balance = 0, interest_rate = 0.02):
 		self.balance = balance
 		self.interest_rate = interest_rate
 	
@@ -24,17 +24,17 @@ class BankAccount:
 
 
 class ChildrensAccount(BankAccount):
-	def _init_(self, balance = 0):
+	def __init__(self, balance = 0):
 		interest_rate = 0
-		super()._init_(balance, interest_rate)
+		super().__init__(balance, interest_rate)
 
 	def accumulate_interest(self):
 		self.balance += 10
 
 
 class OverdraftAccount(BankAccount):
-	def _init_(self, balance = 0, overdraft_penalty = 40):
-		super()._init_(balance)
+	def __init__(self, balance = 0, overdraft_penalty = 40):
+		super().__init__(balance)
 		self.overdraft_penalty = overdraft_penalty
 
 	def withdraw(self, withdraw):
